@@ -508,7 +508,7 @@ function updatePositions() {
   var items = document.getElementsByClassName("mover");
   var modvalues = [1, 2, 3, 4, 5];
   var modvalue = modvalues[Math.floor(Math.random() * modvalues.length)];
-  var phase = Math.sin((document.body.scrollTop / 1250) + modvalue);
+  var phase = Math.sin((document.body.scrollTop / 1500) + modvalue);
 
   //itemsLeft = items[0].basicLeft + 100 * phase + 'px';
 
