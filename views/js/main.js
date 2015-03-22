@@ -518,6 +518,7 @@ function updatePositions() {
 
   for (var i = 0; i < items.length; i++) {
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    console.log(items[i].basicLeft);
     //items[i].style.transform = "translateX(" + items[i].style.left + ")";
   }
 
@@ -539,6 +540,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
 
+//Iterate through sliding pizza load 32 times (columns * rows of pizzas on screen)
   for (var i = 0; i < 32; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
