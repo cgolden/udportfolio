@@ -518,7 +518,7 @@ function updatePositions() {
 
   for (var i = 0; i < items.length; i++) {
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-    console.log(items[i].basicLeft);
+    console.log("basic left: " + items[i].basicLeft);
     //items[i].style.transform = "translateX(" + items[i].style.left + ")";
   }
 
