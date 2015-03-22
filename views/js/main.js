@@ -448,13 +448,18 @@ var resizePizzas = function(size) {
     return dx;
   }
 
+  //Select the randomPizzaContainer element once for pizza resizing
+  var randompizza = document.getElementsByClassName("randomPizzaContainer");
+
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-   var randompizza = document.getElementsByClassName("randomPizzaContainer");
    var dx = determineDx(randompizza[0], size);
-    var newwidth = (randompizza[0].offsetWidth + dx) + 'px';
+   var newwidth = (randompizza[0].offsetWidth + dx) + 'px';
+
+   //Calculate randompizza array length outside of for loop
+   var pizzaLength = randompizza.length;
     
-    for (var i = 0; i < randompizza.length; i++) {
+    for (var i = 0; i < pizzaLength; i++) {
       randompizza[i].style.width = newwidth;
     }
   }
@@ -499,19 +504,21 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
+//Select the mover elements for sliding background pizza position update
+ var items = document.getElementsByClassName("mover");
+
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
 
-  var items = document.getElementsByClassName("mover");
   var modvalues = [1, 2, 3, 4, 5];
   var modvalue = modvalues[Math.floor(Math.random() * modvalues.length)];
   var phase = Math.sin((document.body.scrollTop / 1250) + modvalue);
 
   for (var i = 0; i < items.length; i++) {
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
-    items[i].style.transform = "translateX(" + items[i].style.left + ")";
+    //items[i].style.transform = "translateX(" + items[i].style.left + ")";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -531,7 +538,7 @@ window.addEventListener('scroll', updatePositions);
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 22; i++) {
+  for (var i = 0; i < 40; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza2-min.png";

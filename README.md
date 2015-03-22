@@ -44,6 +44,8 @@ Main.js
 	Moved dx and width calculation outside of for loop to avoid unnecessary
 	processing with each iteration.
 	Replaced querySelectorAll with 
+	Cache randompizza array length outside of for loop
+	Select the randomPizzaContainer element once for pizza resizing outside of function
 
 Tools & References:
 
