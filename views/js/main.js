@@ -507,7 +507,14 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 //Select the mover elements for sliding background pizza position update
  var items = document.getElementsByClassName("mover");
 
-// Moves the sliding background pizzas based on scroll position
+/**
+* Moves the sliding background pizzas based on scroll position
+* The modvalue and phase calculation outside of for loop to eliminate
+* unnecessary calculations
+* Replaced querySelectorAll with getElementsbyClassName
+* Utilized transform translateX for scrolling pizza position updates
+*/
+
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
@@ -540,7 +547,11 @@ document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
 
-//Iterate through sliding pizza load 32 times (columns * rows of pizzas on screen)
+/**
+* Iterate through sliding pizza load 32 times (columns * rows of pizzas on screen)
+* Use compressed pizza image
+* Replaced querySelector with getElementById
+*/
   for (var i = 0; i < 32; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';

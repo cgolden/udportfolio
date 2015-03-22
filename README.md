@@ -39,7 +39,7 @@ Main.js
 	Replaced querySelectorAll with getElementsbyClassName
 	Utilized transform translateX for scrolling pizza position updates
 3. Modified the sliding pizza when page load function to reduce unnecessary
-	for looping. Reduced the condition to < 34.
+	for looping. Reduced the condition to < 32.
 	Replaced querySelector with getElementById
 4. Modified changePizzaSizes function:
 	Moved dx and width calculation outside of for loop to avoid unnecessary
