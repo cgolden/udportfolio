@@ -527,7 +527,7 @@ function updatePositions() {
     //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     var moveItems = items[i].basicLeft + 100 * phase + 'px';
     //items[i].style.transform = "translateX(" + items[i].basicLeft + 100 * phase + "px)";
-    items[i].style.transform = "translateX(" + moveItems + "px)";
+    items[i].style.transform = "translateX(" + moveItems + "px) translateZ(0)";
 
   }
 
