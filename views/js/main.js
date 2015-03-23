@@ -458,7 +458,6 @@ var resizePizzas = function(size) {
 
     //Calculate randompizza array length outside of for loop
     var pizzaLength = randompizza.length;
-    console.log("randompizzalength: " + pizzaLength);
     
     for (var i = 0; i < pizzaLength; i++) {
       randompizza[i].style.width = newwidth;
@@ -523,13 +522,15 @@ function updatePositions() {
   var modvalues = [1, 2, 3, 4, 5];
   var modvalue = modvalues[Math.floor(Math.random() * modvalues.length)];
   var phase = Math.sin((document.body.scrollTop / 1250) + modvalue);
+
   //Calculate items array length outside of for loop
   var itemsLength = items.length;
-console.log("inside function: " + itemsLength);
 
   for (var i = 0; i < itemsLength; i++) {
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     //items[i].style.transform = "translateX(" + items[i].style.left + ")";
+    var moveItems = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.transform = "translateX(" + moveItems + ")";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
