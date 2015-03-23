@@ -449,16 +449,16 @@ var resizePizzas = function(size) {
   }
 
   //Select the randomPizzaContainer element once for pizza resizing
-  var randompizza = document.getElementsByClassName('randomPizzaContainer');
-
-  //Calculate randompizza array length outside of for loop
-   var pizzaLength = randompizza.length;
-   console.log("random pizza length: " + pizzaLength);
+  var randompizza = document.getElementsByClassName("randomPizzaContainer");
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
    var dx = determineDx(randompizza[0], size);
    var newwidth = (randompizza[0].offsetWidth + dx) + 'px';
+
+    //Calculate randompizza array length outside of for loop
+    var pizzaLength = randompizza.length;
+    console.log("randompizzalength: " + pizzaLength);
     
     for (var i = 0; i < pizzaLength; i++) {
       randompizza[i].style.width = newwidth;
@@ -506,11 +506,7 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
 //Select the mover elements for sliding background pizza position update
- var items = document.getElementsByClassName('mover');
-
-//Calculate items array length outside of for loop
-  var itemsLength = items.length;
-  console.log("length outside loop: " + itemsLength);
+ var items = document.getElementsByClassName("mover");
 
 /**
 * Moves the sliding background pizzas based on scroll position
@@ -527,6 +523,8 @@ function updatePositions() {
   var modvalues = [1, 2, 3, 4, 5];
   var modvalue = modvalues[Math.floor(Math.random() * modvalues.length)];
   var phase = Math.sin((document.body.scrollTop / 1250) + modvalue);
+  //Calculate items array length outside of for loop
+  var itemsLength = items.length;
 console.log("inside function: " + itemsLength);
 
   for (var i = 0; i < itemsLength; i++) {
