@@ -527,10 +527,8 @@ function updatePositions() {
   var itemsLength = items.length;
 
   for (var i = 0; i < itemsLength; i++) {
-    //items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
     //items[i].style.transform = "translateX(" + items[i].style.left + ")";
-    var moveItems = items[i].basicLeft + 100 * phase + 'px';
-    items[i].style.transform = "translateX(" + moveItems + ")";
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
