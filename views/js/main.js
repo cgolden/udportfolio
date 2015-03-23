@@ -504,9 +504,6 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
-//Select the mover elements for sliding background pizza position update
-var items = document.getElementsByClassName("mover");
-
 /**
 * Moves the sliding background pizzas based on scroll position
 * The modvalue and phase calculation outside of for loop to eliminate
@@ -518,6 +515,9 @@ var items = document.getElementsByClassName("mover");
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+  
+  //Select the mover elements for sliding background pizza position update
+  var items = document.getElementsByClassName("mover");
 
   var modvalues = [1, 2, 3, 4, 5];
   var modvalue = modvalues[Math.floor(Math.random() * modvalues.length)];
